@@ -5,6 +5,10 @@ body
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   /* text-align: center; */
+	/* background: rgb(209,228,234); */
+  background: #bae4f4;
+  padding: 0%;
+  margin: 0%;
 }
 
 table
@@ -18,7 +22,7 @@ table
   /* line-height: 40px; */
   /* font-size:12px; */
 
-  background: rgba( 255, 255, 255, 0.12 );
+  background: rgba(255, 255, 255, 0.363);
 	box-shadow: 0 8px 32px 0 rgba(130, 130, 130, 0.37);
 	/* backdrop-filter: blur( 10px );
 	-webkit-backdrop-filter: blur( 10px ); */
@@ -116,6 +120,16 @@ h2.welcome
   left: 0%;
 }
 
+h3.comission
+{
+  font-weight: 400;
+  color: #555;
+  margin: 15px 0px 20px 20px;
+  position: absolute;
+  left: 0%;
+  /* text-align: center; */
+}
+
 a {
 	/* float: right; */
   /* text-align: right; */
@@ -205,7 +219,7 @@ label{
 input {
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.347);
   border-radius: 20px;
   border-style: none;
   /* box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0; */
@@ -256,7 +270,7 @@ input:focus {
 .button {
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.57);
   border-radius: 33px;
   border-style: none;
   border: 1px solid #5f6366;

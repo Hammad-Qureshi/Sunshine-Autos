@@ -20,7 +20,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                <a href="logout.php">Logout</a>
           </div>
      </div>
-     <br><br><br><br>
+     <br><br>
+
+     <?php
+          include('db_conn.php');
+          $query = "SELECT `comission` FROM `salesman` WHERE id='".$_SESSION['id']."'";
+          $run = mysqli_query($conn,$query) or die(mysqli_error($myDB));
+          $row = mysqli_fetch_row($run);
+     ?>
+     <h3 class="comission">Your Comission: Rs.<?php echo $row[0]; ?>/-</h2>
+     <!-- <br><br> -->
+     <hr id=divider>
+
      <!-- Tables -->
      <div class="row">
           <div class="block t1">
@@ -51,7 +62,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                          <td><?php echo $rows['car_id']; ?></td> 
                          <td><?php echo $rows['order_status']; ?></td> 
                          <td><?php echo $rows['delivery_date']; ?></td> 
-                         <td><?php echo $rows['payment']; ?></td> 
+                         <td><?php echo $rows['payment_status']; ?></td> 
                     </tr> 
                     <?php 
                          } 
@@ -87,7 +98,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                          <td><?php echo $rows['car_id']; ?></td> 
                          <td><?php echo $rows['car_name']; ?></td> 
                          <td><?php echo $rows['car_details']; ?></td> 
-                         <td><?php echo $rows['price']; ?></td> 
+                         <td>Rs.<?php echo $rows['price']; ?>/-</td> 
                     </tr> 
                     <?php 
                          } 
@@ -120,7 +131,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                               <option value="Completed">
                          </datalist>
                     
-                    <label for="payment">Payment: </label><br><input size="20" list="payments" name="payment"><br><br>
+                    <label for="payment">Payment: </label><br><input size="20" list="payments" name="payment_status"><br><br>
                     <datalist id="payments">
                          <option value="Pending">
                          <option value="Paid">
@@ -199,7 +210,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                          else
                          {
                               ?>
-                                   <h2 id="null">No data found :(</h2>
+                                   <h2 id="null">No customer found :(</h2>
                               <?php
                          }  
                     }
